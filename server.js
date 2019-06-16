@@ -4,6 +4,8 @@ var bodyParser = require("body-parser"); //JSON responses
 var mongoose = require("mongoose"); //Mongo object modelling 
 var request = require("request"); //Makes http calls
 var cheerio = require("cheerio"); //Scraper
+var axios = require("axios");
+
 
 // Require all models
 var db = require("./models");
