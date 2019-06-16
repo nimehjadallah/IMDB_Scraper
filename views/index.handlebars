@@ -11,7 +11,7 @@
                 <span class="sr-only">(current)</span>
             </a>
             {{!-- <a class="nav-item nav-link" href="/saved">Saved Movies</a> --}}
-            <a href="/scrape" class="btn btn-danger active" role="button" aria-pressed="true">Scrape IMDB</a>
+            <a href="/scrape" class="btn btn-info active" role="button" aria-pressed="true">Scrape IMDB</a>
         </div>
     </div>
 </nav>
@@ -20,8 +20,8 @@
         <div class="jumbotron text-center background-image">
             <div class="overlay">
                 <div class="caption">
-                    <h1 class="display-1 text-white">Mongo Scraper</h1>
-                    <h2 class="text-white">IMDB</h2>
+                    <h1 class="display-1 text-secondary">Mongo Scraper</h1>
+                    <h2 class="text-secondary">IMDB</h2>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="col-12">
             {{#if movies}}
             {{#each movies}}
-                <div class="card w-90">
+                <div id="movies" class="card w-90">
                     <div class="card-header text-white bg-primary">
                         <a href={{link}} target="_blank" class="text-white">
                             <h2>{{title}}</h2>
@@ -46,7 +46,7 @@
             {{else}}
                 <div class="card text-white bg-warning w-90 p-1">
                     <div class="card-body text-center">
-                        No more Movies!
+                        No more Movies to scrape!
                     </div>
                 </div>
             {{/if}}
