@@ -47,8 +47,8 @@ router.get("/scrape", (req, res) => {
   });
 
   // Send a message to the client
-  res.send("Scrape Complete");
-//   res.redirect("/");
+//   res.send("Scrape Complete");
+  res.redirect("/movies");
 
   
 });
@@ -60,16 +60,17 @@ router.get("/movies", function(req, res) {
     // Grab every document in the Articles collection
     db.Movie.find({})
       .then(function(dbMovie) {
+          res.render("movies", {movies: dbMovie});
         // If we were able to successfully find Articles, send them back to the client
-        res.json(dbMovie);
+        // res.json(dbMovie);
       })
       .catch(function(err) {
         // If an error occurred, send it to the client
         res.json(err);
       });
   });
-// app.get("/", function(req, res) {
-//     res.render("index");
+// router.get("/movies", function(req, res) {
+//     res.render("movies");
 // });
 
 module.exports = router;
