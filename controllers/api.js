@@ -32,6 +32,7 @@ router.get("/scrape", (req, res) => {
                 result.link = $(this)
                     .children("a")
                     .attr("href");
+                result.year = $(element).find(".secondaryInfo").text().trim();
                 
                 
            // Create a new Movie using the `result` object built from scraping
@@ -69,8 +70,5 @@ router.get("/movies", function(req, res) {
         res.json(err);
       });
   });
-// router.get("/movies", function(req, res) {
-//     res.render("movies");
-// });
 
 module.exports = router;

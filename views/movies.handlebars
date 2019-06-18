@@ -9,7 +9,7 @@
             <a class="nav-item nav-link active" href="/">Home
                 <span class="sr-only">(current)</span>
             </a>
-            <a href="/movies" class="btn btn-info active" role="button" aria-pressed="true">Scrape IMDB</a>
+            <a href="/movies" class="btn btn-info active" role="button" aria-pressed="true">Scrape IMDb</a>
         </div>
     </div>
 </nav>
@@ -17,8 +17,8 @@
         <div class="jumbotron text-center background-image">
             <div class="overlay">
                 <div class="caption">
-                    <h1 class="display-1 text-secondary">Mongo Scraper</h1>
-                    <h2 class="text-secondary">IMDB</h2>
+                    <h1 class="display-1 text-secondary">Most Popular Movies</h1>
+                    <h2 class="text-secondary">As determmined by IMDb users</h2>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <div id="movies" class="card w-90">
                     <div class="card-header text-white bg-info">
                         <a href={{this.link}} target="_blank" class="text-white">
-                            <h2>{{this.title}}</h2>
+                            <h2>{{this.title}} {{this.year}}</h2>
                         </a>
                     </div>
                 </div>
