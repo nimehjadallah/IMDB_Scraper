@@ -19,7 +19,7 @@ router.get("/scrape", (req, res) => {
     var $ = cheerio.load(response.data);
     // console.log(response.data)
     // console.log($('.titleColumn'))
-            // Now, we grab every article:
+            // Now, we grab every movie:
             $(".titleColumn").each(function (i, element) {
 // console.log(".titleColumn")
                 // Save an empty result object
@@ -58,11 +58,11 @@ router.get("/scrape", (req, res) => {
 
 // Route for getting all Movies from the db
 router.get("/movies", function(req, res) {
-    // Grab every document in the Articles collection
+    // Grab every document in the Movie collection
     db.Movie.find({})
       .then(function(dbMovie) {
           res.render("movies", {movies: dbMovie});
-        // If we were able to successfully find Articles, send them back to the client
+        // If we were able to successfully find Movie, send them back to the client
         // res.json(dbMovie);
       })
       .catch(function(err) {
