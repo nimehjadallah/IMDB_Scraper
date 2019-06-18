@@ -29,7 +29,7 @@ router.get("/scrape", (req, res) => {
                 result.title = $(this)
                     .children("a")
                     .text().trim();
-                result.link = $(this)
+                result.link = "https://www.imdb.com" + $(this)
                     .children("a")
                     .attr("href");
                 result.year = $(element).find(".secondaryInfo").text().trim();
